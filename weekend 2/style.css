@@ -1,0 +1,144 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	height: 100vh;
+	font-size: 1rem;
+	font-family: 'Roboto','Poppins',Arial,sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game{
+	height: 70vh;
+	width: 80vw;
+	border: 3px solid #000;
+	position: relative;
+	overflow: hidden;
+	background-image: url('assets/land.png');
+	 /* url('assets/cloud.png'); */
+	background-repeat: no-repeat;
+	background-size: contain;
+	/* background-position: 0 230px, 0 30px; */
+	background-position:bottom;
+	animation: land 3s linear infinite;
+}
+@keyframes land{
+	0%{
+		/* background-position: 0 230px, 100% 30px; */
+		background-position:bottom;
+	}
+	100%{
+		/* background-position: 100% 230px, -100% 30px; */
+		background-position:bottom;
+	}
+}
+
+.character{
+	position: absolute;
+	bottom: 0;
+}
+
+.dino{
+	height: 75px;
+	width: 70px;
+	background-image: url('assets/dino1.png');
+	background-size: 100% 100%;
+	animation: dino 0.2s linear infinite;
+	left: 10px;
+}
+.dino{
+	animation: dino 0.2s linear infinite;
+}
+.jump{
+	animation: jump 0.8s linear;
+}
+@keyframes dino{
+	0%{
+		background-image: url('assets/dino1.png');
+	}
+	50%{
+		background-image: url('assets/dino2.png');
+	}
+	100%{
+		background-image: url('assets/dino3.png');
+	}
+}
+@keyframes jump{
+	0%, 100%{
+		bottom: 0px;
+	}
+	30%, 60%{
+		bottom: 80px;
+	}
+}
+
+.cactus{
+	right: 0;
+	height: 55px;
+	width: 27px;
+	background-image: url('assets/cactus.png');
+	background-size: 100% 100%;
+	animation: cactus 1.5s linear infinite;
+}
+@keyframes cactus{
+	0%{
+		right: 0;
+	}
+	100%{
+		right: 100%;
+	}
+}
+
+.bird{
+	right: 0;
+	height: 25px;
+	width: 27px;
+	background-image: url('assets/bird2.png');
+	background-size: 100% 100%;
+	animation: bird 1.5s linear infinite;
+}
+@keyframes bird{
+	0%{
+		background-image: url('assets/bird1.png');
+	}
+	100%{
+		background-image: url('assets/bird2.png');
+	}
+}
+
+.score{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 1.2em;
+	font-weight: 800;
+}
+
+.highscore{
+	position: absolute;
+	top: 10px;
+	left: 40px;
+	font-size: 1.2em;
+	font-weight: 800;
+}
+
+.restart-btn{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	outline: none;
+	padding: 5px;
+	border-radius: 3px;
+	display: none;
+}
+
+.game.lost, .game.lost .dino{
+	animation: none;
+}
+.game.lost .cactus{
+	display: none;
+}

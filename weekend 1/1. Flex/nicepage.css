@@ -1,0 +1,203 @@
+.page-preview {
+    border-radius: 0;
+    height: 100%;    
+}
+
+.page-preview-header {
+    background: #f2f2f2;
+    border: none;    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.page-preview-header-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.page-preview-header-icon > a:hover{
+    background-color: lightblue;
+}
+
+.page-preview-content-heading3{
+    font-family: Oswald, sans-serif !important;
+    text-align: center;
+    font-style: bold;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 14px;
+}
+
+footer{
+    background: rgb(51, 51, 51);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.page-preview-footer{
+    color: whitesmoke;
+    padding: 15px;
+    text-align: center;
+    font-style: normal;
+}
+
+.page-preview-footer-template{
+    color: whitesmoke;
+    padding-top: 25px;
+    text-align: center;
+    font-style: normal;
+}
+
+/* Image content */
+.page-preview-content-image{
+    margin: 15px;
+    background: white;
+    padding: 15px;
+}
+
+.page-preview-content-image-image{    
+    width: 100%;
+    height: 50%;
+}
+
+h3{
+    font-family: Oswald, sans-serif !important;
+    text-align: left;
+    font-style: bold;
+}
+
+h4{
+    font-family: Oswald, sans-serif !important;
+    text-align: left;
+    font-style: bold;
+}
+
+p{
+    font-family: 'Open Sans',sans-serif;
+    color:rgb(31, 29, 29);
+    font-style: italic;
+    font-size: 14px;    
+    text-align: left;
+}
+
+button{
+    height: 30px;
+    width: 150px;
+}
+
+button:hover{
+    background-color:grey;
+}
+
+h1.page-preview-content-menu{
+    font-family: Oswald, sans-serif !important;
+    font-size: bold 2.25rem;
+    color: red;
+    text-align: center;
+    padding-top: 60px;
+}
+
+p.page-preview-content-description{
+    font-family: 'Open Sans',sans-serif;
+    color:rgb(31, 29, 29);
+    font-style: italic;
+    font-size: 14px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Media Query for mobile device */
+@media(min-width:320px){
+    .page-preview-header1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    .page-preview-content{
+        background: lightgrey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .page-preview-header1-page{
+        display: none;
+    }
+}
+
+
+/* Media Query Tablet */
+@media(min-width:768px){
+    .page-preview-content-image{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;        
+    }
+
+    .page-preview-header1-page{
+        display: none;
+    }
+
+    .page-preview-content-image-image{
+        width: 40%;
+        height: 100%;
+    }
+    p.page-preview-content-image-description{
+        padding-left: 25px;
+    }
+    .page-preview-content-image-description-wrap{
+        display: flex;
+        flex-direction: column;      
+        padding-top: 50px;
+        width: 50%;
+        height: 100%;
+    }
+}
+
+/* media query-desktop view */
+@media(min-width:1024px){
+    .page-preview-header1-menu{
+        display: none;
+    }
+
+    .page-preview-header1-page{
+        display: inline-block;                
+    }
+
+    a.page-preview-header1-page:hover{
+        color: red;
+    }
+
+    .page-preview-content-image-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .page-preview-content-image-wrap1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .page-preview-content-image-wrap2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .page-preview-content-image{
+        width: 45%;
+        height: 100%;
+    }
+
+    .page-preview-content-image-description-wrap{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

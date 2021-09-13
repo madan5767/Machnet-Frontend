@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task</title>
+</head>
+<body>
+    <h1>This is Javascript Task</h1>
+</body>
+    <script type="text/javascript">
+               
+        // 1.
+        function hello_forward(){
+            let string = "hello!";
+            let length = string.length;
+            let output = "";
+            for (let i = 0; i <= length; i++) {
+                for (let j = 0; j < i; j++) {
+                    output += string[j];
+                }
+                output += "\n";
+            }
+        console.log(output);
+        }
+        hello_forward();
+        
+
+        // 2.
+        function hello_reverse(){
+            let string = "hello!";
+            let length = string.length;
+            let output = "";
+            for (let i = 0; i <= length; i++) {
+                for (let j = 0; j < length-i; j++) {
+                    output += string[j];
+                }
+                output += "\n";
+            }
+            console.log(output);
+        }
+        hello_reverse();
+
+        // 3. By Reiyaz sir
+        const createPyramid = (str) => {
+            let length = str.length % 2 === 0 ? str.length / 2 : (str.length +1) / 2;
+            let count = str.length % 2 === 0 ? 2 : 1;
+            const addWhiteSpace = (numberOfSpace) => {
+                let array = [];
+                for(i=1; i <= numberOfSpace; i++) {                    
+                    array.push(" ");
+                }
+                return array.join("");                
+            };
+            for (let i=length; i>=1;i--){
+                let result = addWhiteSpace(i-1)+str.substr(i-1,count);
+                count +=2;
+                console.log(result);
+            }
+        };
+        createPyramid("racecar");
+
+        //4. nth fibonacci number finding
+        
+        function  fib(n){
+            let f = new Array(n+2); // handle case, n = 0
+            let i;
+            f[0] = 0;
+            f[1] = 1;
+            for (i = 2; i <= n; i++)
+            {
+               f[i] = f[i-1] + f[i-2];
+            }
+            return f[n-1];
+        }
+        let n=7;
+        console.log(fib(n));
+        
+        // 5.          
+        const personalInforamtion = [
+            { name: 'Ram', address: 'Kathmandu' },
+            { name: 'Gita', address: 'Lalitpur' },
+            { name: 'Sita', address: 'Kathmandu' },
+        ];
+        
+        const createobj = (array) => {
+            let result = {};
+            array.forEach((item) => {
+                result[item.address.toLowerCase()] = array
+                .filter((e) => e.address === item.address)
+                .map((x) => x.name);
+            });
+            return result;
+        };
+        console.log(createobj(personalInforamtion));
+
+        // 6.
+        const details = [
+            { name: 'Ram', age: 15 },
+            { name: 'Shyam', age: 21 },
+            { name: 'Hari', age: 12 },
+            { name: 'Bharat', age: 18 },
+            { name: 'Sita', age: 24 },
+        ];
+
+        const greaterThanEighteen = details.filter((e)=> {
+        const value = Object.values(e);
+        return value[1]>18;
+        });
+        console.log(greaterThanEighteen);
+
+        // 7.
+        // const details = [
+        //     { name: 'Ram', age: 15 },
+        //     { name: 'Shyam', age: 21 },
+        //     { name: 'Hari', age: 12 },
+        //     { name: 'Bharat', age: 18 },
+        //     { name: 'Sita', age: 24 },
+        // ];
+
+        const ascending = details.sort(function (x, y) {
+            return x.age - y.age;
+        });
+        const descending = details.sort(function (x, y) {
+            return y.age - x.age;
+        });
+        console.log('Ascending : ', ascending);
+        console.log('Descending : ', descending);
+
+        // 8. 
+
+        const filteredArray = details.filter((personalInfo) => {
+            let length = personalInfo.pokemons.length;
+            let isColorYellowPokemonPresent = personalInfo.pokemons
+            .map((e) => e.color)
+            .includes("yellow");
+
+            return length === 2 && isColorYellowPokemonPresent;
+        });
+        console.log((filteredArray));
+
+
+        // 9.
+        const number = [1,2,3,4,5,6]
+
+        const tripleEvenNumbers = number.map((n)=> {
+        if ((n % 2) === 0 ) {
+            n*=3;
+        }
+        return n;
+        });
+        console.log(tripleEvenNumbers);
+
+        // 10.
+        const detail = {name: "ram", address: "kathmandu", age: 15, email: "ram@gmail.com"}
+
+        const keys = Object.keys(detail);
+        const values = Object.values(detail);
+        const result = keys.concat(values);
+        console.log(result);
+
+        // 11.
+        const sentence = "the carrots on the table and the bananas on the table has dissappeared";
+        const obj = {};
+        sentence.split(" ").forEach((item) => {
+            if (obj.hasOwnProperty(item)) {
+                obj[item] = obj[item] + 1;
+            }else{
+                obj[item] = 1;
+            }
+        });
+        console.log(obj);
+    </script>
+</html>

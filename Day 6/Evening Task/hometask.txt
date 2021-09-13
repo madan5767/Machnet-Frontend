@@ -1,0 +1,65 @@
+// 1. Changing font color and text
+
+let test = document.getElementById("test");
+
+test.addEventListener("mouseenter", function( event ) {
+  event.target.style.color = "red";
+
+  setTimeout(function() {
+    event.target.style.color = "";
+  }, 500);
+}, false);
+
+test.addEventListener("mouseover", function( event ) {
+  event.target.style.color = "yellow";
+
+  setTimeout(function() {
+    event.target.style.color = "";
+    event.target.innerHTML="hello";
+  }, 500);
+}, false);
+
+// 2. Adding row on a existing table.
+
+// function addRow(tableID) {
+//     let tableRef = document.getElementById(tableID);
+//     let newRow = tableRef.insertRow(-1);
+  
+//     let newCell = newRow.insertCell(0);
+  
+//     let newText = document.createTextNode('New bottom row');
+//     newCell.appendChild(newText);
+//   }
+// addRow('my-table');
+// let obj = document.getElementById("addrow")
+// obj.addEventListener("click", addRow('my-table'));
+
+const btn = document.querySelector("button");
+    btn.addEventListener("click", function () {
+        let tableRef = document.getElementById("my-table");
+        let newRow = tableRef.insertRow(-1);
+      
+        let newCell = newRow.insertCell(0);
+      
+        let newText = document.createTextNode('New bottom row');
+        newCell.appendChild(newText);
+ });
+
+// 3. calculating area when length and breadth is given.
+
+
+// function multiplyBy()
+// {
+//     num1 = document.getElementById("firstNumber").value;
+//     num2 = document.getElementById("secondNumber").value;
+//     document.getElementById("result").innerHTML = num1 * num2;
+// }
+
+const areabtn = document.querySelector("areabtn");
+    areabtn.addEventListener("click", function () {
+        var num1 = parseInt(document.getElementById("length").value);
+        var num1 = parseInt(document.getElementById("breadth").value);
+        areabtn.innerHTML = num1 * num2;
+        console.log(num1*num2);
+    });
+

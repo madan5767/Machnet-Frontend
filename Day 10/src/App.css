@@ -1,0 +1,39 @@
+.App{
+  height: 60vh;
+  width: 50%;
+  margin-left:300px;
+  margin-top: 100px;
+  padding: 25px;
+  background-color: aliceblue; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.submit{
+  background-color: lightgoldenrodyellow;
+  color: blue;
+  margin-top: 25px;
+  margin-left: 15px;
+  text-align: center;
+  border-radius: 0.5em;
+  height: 30px;
+  font-weight: bolder;
+}
+
+#heading{
+  text-align: center;
+  color:darkgoldenrod;
+  margin-bottom: 25px;
+}
+
+label{
+  color:crimson;
+  margin-right: 10px; 
+  margin-left: 15px;
+}
+
+input{  
+  border-radius: 0.5em;
+  border-color:grey;
+}

@@ -1,0 +1,43 @@
+.App{
+  margin-top: 100px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: azure;
+}
+
+h1{
+  text-align: center;
+  color: blue;
+  font-weight: 500;
+}
+
+label{
+  color: brown;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: larger;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+h2{
+  color:darkgreen;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h3{
+  color:darkgreen;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn-next{
+  font-style: normal;
+  font-weight: 500;
+  height: 50px;
+  width: 100px;
+  align-content: center;
+  color: brown;
+  background-color:wheat;
+  align-items: center;
+  margin-left: 40%;
+}

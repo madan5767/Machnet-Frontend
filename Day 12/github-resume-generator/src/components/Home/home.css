@@ -1,0 +1,54 @@
+.home-page{
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;  
+    background: linear-gradient(118.39deg, #4CA9DF -1.16%, #292E91 101.16%);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.25);
+    width: 100vw;
+    height: 100vh;
+    padding-left: 500px;
+    padding-right: 400px;
+    padding-top: 200px;
+  }
+  
+  .title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+  }
+  
+  .sub-title{
+    text-align: center;
+  }
+  
+  .form{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+  }
+  
+  .form__input{
+    height: 30px;
+    width: 200px;
+    margin-right: 20px;
+    background: rgba(237, 237, 237, 0.63);
+    border-radius: 6px;
+  }
+  
+  .form__btn{
+    width: 100px;
+    background: #DE5A21;
+    border: 1px solid #F24E1E;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: aliceblue;
+  }
+  
+  .form-wrap{
+    display: flex;
+    flex-direction: row;
+  }

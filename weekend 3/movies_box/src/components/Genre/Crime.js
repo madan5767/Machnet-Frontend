@@ -28,7 +28,8 @@ const Crime = () => {
                     <h3>Movie Name:{detail.title}</h3>
                     <p>&#9734; Rating:{detail.rating}</p>
                     <p>&#9200; Duration:{detail.runtime} Mins.</p>
-                    <button>Watchlist +</button>            
+                    <button>Watchlist +</button>
+                    <button>Watched &#10003; </button>           
                 </div>
                 );
             })

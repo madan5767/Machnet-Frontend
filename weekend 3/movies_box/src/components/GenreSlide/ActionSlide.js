@@ -62,6 +62,8 @@ const ActionSlide = () => {
                     <p>&#9734; Rating:{currMovie.rating}</p>
                     <p>&#9200; Duration:{currMovie.runtime} Mins.</p>
                     <button>Watchlist +</button>
+                    <button>Watched &#10003; </button>
+
                 </div>
             )})}
 

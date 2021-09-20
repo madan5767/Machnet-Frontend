@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react';
 import {BrowserRouter, Link} from "react-router-dom"
 import './genreSlide.css';
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
+import { useHistory } from 'react-router';
 
 const DramaSlide = () => {
     const [details, setDetails] = useState([]);
     const [movies, setMovies] = useState({ prev: 0, next: 4 });
+    const history = useHistory();
 
     useEffect(()=>{
         axios.get('https://yts.mx/api/v2/list_movies.json?genre=drama&&limit=10')
@@ -19,6 +21,11 @@ const DramaSlide = () => {
             alert('error');
         })
     },[])
+
+    const movieDetailspage = (id) => {
+      history.push({pathname: '/MovieDetails', state: id });
+      // console.log(id);
+  }
 
     const handelPrevBtn = () => {
         if (movies.prev > 0) {
@@ -52,7 +59,7 @@ const DramaSlide = () => {
     
         .map((currMovie, index) => {
             return (
-                <div className='main__container'>
+                <div className='main__container' onClick={() => movieDetailspage(currMovie.id)}>
                     <img src={currMovie.medium_cover_image} alt='movie'  className='image__slider'/>
                     <h4>Movie Name:{currMovie.title}</h4>
                     <p>&#9734; Rating:{currMovie.rating}</p>

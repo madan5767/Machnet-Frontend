@@ -4,7 +4,7 @@ import axios from 'axios';
 import {BrowserRouter, Link} from "react-router-dom"
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 import './genreSlide.css';
-import MovieDetails from '../MovieDetails/MovieDetails';
+// import MovieDetails from '../MovieDetails/MovieDetails';
 import { useHistory } from 'react-router';
 
 const ActionSlide = () => {
@@ -25,7 +25,11 @@ const ActionSlide = () => {
 
     const movieDetailspage = (id) => {
         history.push({pathname: '/MovieDetails', state: id });
-        console.log(id);
+        // console.log(id);
+    }
+
+    const watchList = () => {
+
     }
 
     const handelPrevBtn = () => {
@@ -67,8 +71,8 @@ const ActionSlide = () => {
                     <h4>Movie Name:{currMovie.title}</h4>
                     <p>&#9734; Rating:{currMovie.rating}</p>
                     <p>&#9200; Duration:{currMovie.runtime} Mins.</p>
-                    <button>Watchlist +</button>
-                    <button>Watched &#10003; </button>
+                    <button onClick={watchList}>Watchlist +</button>
+                    <button onClick={watchList}>Watched &#10003; </button>
                 </div>
             )})}
 

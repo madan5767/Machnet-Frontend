@@ -4,6 +4,7 @@ import axios from 'axios';
 import {BrowserRouter, Link} from "react-router-dom"
 import './moviedetails.css';
 import { useLocation } from 'react-router';
+import { useHistory } from 'react-router';
 
 const MovieDetails = () => {
     const [Moviedetail, setMovieDetail] = useState([]); 
@@ -12,6 +13,7 @@ const MovieDetails = () => {
     const movie_id = location.state;
     const movieapi = `https://yts.mx/api/v2/movie_details.json?movie_id=${movie_id}`;
     const suggestionapi = `https://yts.mx/api/v2/movie_suggestions.json?movie_id=${movie_id}`;
+    const history = useHistory();
 
     const fetchMovieDetails = () => {
         axios
@@ -20,8 +22,8 @@ const MovieDetails = () => {
             setMovieDetail(res.data.data);
             console.log(Moviedetail);
         })
-        .catch((err) => {
-        console.log(err);
+        .catch((error) => {
+        console.log(error);
         });
     }
 
@@ -37,27 +39,34 @@ const MovieDetails = () => {
       });
     }
 
+    const movieDetailspage = (id) => {
+        history.push({pathname: '/MovieDetails', state: id });
+        // console.log(id);
+    }
+
     useEffect( () =>{
         fetchMovieDetails();
         fetchSuggestedMovies();
-    },[])   
+    },[]) 
 
     return (        
         <div className="movie">
             <div className="movie-details">
                 {Moviedetail.movie !== undefined && (
                     <section className="movie__wrapper">
-                    <iframe
-                        src={`https://www.youtube.com/embed/${Moviedetail.movie.yt_trailer_code}`} className="trailer__movie">
-                    </iframe>
-                    <article className="context__movie">
-                    <div
-                        className="image__movie"
-                        style={{backgroundImage: `url(${Moviedetail.movie.medium_cover_image})`}}>
-                    </div>
+                        <div className="movie-top-wrapper">
+                            <div className="image__movie"
+                                style={{backgroundImage: `url(${Moviedetail.movie.medium_cover_image})`}}>
+                            </div> 
+                            <iframe
+                                src={`https://www.youtube.com/embed/${Moviedetail.movie.yt_trailer_code}`} frameborder="0" className="trailer__movie">
+                            </iframe>                            
+                        </div>
+                    
+                    <article className="context__movie">                                    
                     <div className="info__movie">
                         <h2 className="title__movie">{Moviedetail.movie.title}</h2>
-                        <p className="rating__movie">Rating : {Moviedetail.movie.rating}</p>
+                        <p className="rating__movie"> &#9734; Rating : {Moviedetail.movie.rating}</p>
                         <ul className="gener__movie">
                             Genre:{" "}
                             {Moviedetail.movie.genres.map((genre) => {
@@ -67,6 +76,8 @@ const MovieDetails = () => {
                         <p className="duration__movie">
                         Duration: {Moviedetail.movie.runtime} Mins.
                         </p>
+                        <button>Watchlist +</button>
+                        <button>Watched &#10003; </button>
                         <p className="desc__movie">
                         Descripiton: {Moviedetail.movie.description_full}
                         </p>
@@ -85,9 +96,7 @@ const MovieDetails = () => {
                             </div>
                             );
                         })}
-                        </ul>
-                        <button>Watchlist +</button>
-                        <button>Watched &#10003; </button>
+                        </ul>                        
                     </div>
                     </article>
                     </section>
@@ -99,11 +108,11 @@ const MovieDetails = () => {
                 <div className="movie-suggest-main">
                     {SuggestedMovies.map((suggested) => {
                         return (
-                            <div className="movie-suggest-item">
-                                <img src={suggested.medium_cover_image} className="movieImage__second"/>
+                            <div className="movie-suggest-item" onClick={() => movieDetailspage(suggested.id)}>
+                                <img src={suggested.medium_cover_image} className="image__slider_suggested"/>
                                 <h3>Movie Name:{suggested.title}</h3>
-                                <p>Rating:{suggested.rating}</p>
-                                <p>Duration:{suggested.runtime} Mins.</p>
+                                <p>&#9734; Rating:{suggested.rating}</p>
+                                <p>&#9200; Duration:{suggested.runtime} Mins.</p>
                                 <button>Watchlist +</button>
                                 <button>Watched &#10003; </button>
                             </div>

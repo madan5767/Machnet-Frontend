@@ -2,9 +2,11 @@ import React from 'react'
 import './genre.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 
 const Crime = () => {
     const [details, setDetails] = useState([]);
+    const history = useHistory();
 
     useEffect(()=>{
         axios.get('https://yts.mx/api/v2/list_movies.json?genre=crime')
@@ -16,6 +18,11 @@ const Crime = () => {
             alert('error');
         })
     },[]);
+
+    const movieDetailspage = (id) => {
+        history.push({pathname: '/MovieDetails', state: id });
+        // console.log(id);
+    }
     
     console.log(details)
     return (
@@ -25,7 +32,7 @@ const Crime = () => {
         { 
             details.map((detail) => {
                 return (
-                <div className="item">
+                <div className="item" onClick={() => movieDetailspage(detail.id)}>
                     <img src={detail.medium_cover_image} className='movieImage'/>
                     <h3>Movie Name:{detail.title}</h3>
                     <p>&#9734; Rating:{detail.rating}</p>

@@ -1,23 +1,78 @@
 .movie{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .movie-suggest-main{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;    
 }
+
+.movie__wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-top-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.trailer__movie{
+    height: 400px;
+    width: 80%;
+}
+
+.image__movie{
+    height: 400px;
+    width: 300px;
+    margin-left: 25px;
+    background-repeat:no-repeat;  
+}
+
+.rating__movie{
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
+.gener__movie{
+    color: white;
+    font-size: 15px;
+}
+
 
 .movie-suggest-item{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width:200px;
+    justify-content: space-around;
+    border: 5px solid white;
+    border-radius: 10px;
+    height: 550px;
+    width: 280px;
+    color: blanchedalmond;
+    padding: 15px;
+    text-align: center;
 }
 
-.movieImage__second{
-    height: 300px;
-    width: 200px;
+.image__slider_suggested{
+    width: 230px;
+    height: 345px;
+    border-radius: 10px;
+    margin-left: 10%;
+}
+
+.movie-suggest-item button{
+    margin-left: 30%;
+    width: 100px;
+    height: 35px;
+    border-radius: 1rem;
+    color: blanchedalmond;
+    background-color: black;
+}
+
+button:hover{
+    color: green;
 }

@@ -2,9 +2,11 @@ import React from 'react'
 import axios from 'axios';
 import { useState, useEffect} from 'react';
 import './genre.css'
+import { useHistory } from 'react-router';
 
 function Action() {
     const [details, setDetails] = useState([]);
+    const history = useHistory();
 
     useEffect(()=>{
         axios.get('https://yts.mx/api/v2/list_movies.json?genre=action')
@@ -16,6 +18,11 @@ function Action() {
         })
     },[])
 
+    const movieDetailspage = (id) => {
+        history.push({pathname: '/MovieDetails', state: id });
+        // console.log(id);
+    }
+
     console.log(details)
     return (
         <div className="genre-title">
@@ -24,7 +31,7 @@ function Action() {
         { 
             details.map((detail) => {
                 return (        
-                <div className="item">                    
+                <div className="item" onClick={() => movieDetailspage(detail.id)}>                    
                     {(details.length<=0)?
                     <h1>loading</h1>:
                     <>

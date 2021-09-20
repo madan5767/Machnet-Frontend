@@ -5,10 +5,12 @@ import {BrowserRouter, Link} from "react-router-dom"
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 import './genreSlide.css';
 import MovieDetails from '../MovieDetails/MovieDetails';
+import { useHistory } from 'react-router';
 
 const ActionSlide = () => {
     const [details, setDetails] = useState([]);
     const [movies, setMovies] = useState({ prev: 0, next: 4 });
+    const history = useHistory();
 
     useEffect(()=>{
         axios.get('https://yts.mx/api/v2/list_movies.json?genre=action&&limit=10')
@@ -20,6 +22,11 @@ const ActionSlide = () => {
             alert('error');
         })
     },[])
+
+    const movieDetailspage = (id) => {
+        history.push({pathname: '/MovieDetails', state: id });
+        console.log(id);
+    }
 
     const handelPrevBtn = () => {
         if (movies.prev > 0) {
@@ -35,8 +42,7 @@ const ActionSlide = () => {
           movies.next += 1;
         }
         setMovies({ ...movies });
-      };
-    
+      };  
    
     return (
         
@@ -56,18 +62,17 @@ const ActionSlide = () => {
     
             .map((currMovie, index) => {
             return (
-                <div className='main__container'>
+                <div className='main__container' onClick={() => movieDetailspage(currMovie.id)}>
                     <img src={currMovie.medium_cover_image} alt='movie'  className='image__slider'/>
                     <h4>Movie Name:{currMovie.title}</h4>
                     <p>&#9734; Rating:{currMovie.rating}</p>
                     <p>&#9200; Duration:{currMovie.runtime} Mins.</p>
                     <button>Watchlist +</button>
                     <button>Watched &#10003; </button>
-
                 </div>
             )})}
 
-            <h6> <Link to='/Action'>See All</Link></h6>        
+            <h6> <Link to='/Action' class="link">See All</Link></h6>        
         </div>
         </section>    
     )

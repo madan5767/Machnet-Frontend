@@ -18,6 +18,8 @@ const Drama = () => {
     
     console.log(details)
     return (
+        <div className="genre-title">
+        <h1>Drama Movies</h1>
         <div className='first'>
         { 
             details.map((detail) => {
@@ -33,6 +35,7 @@ const Drama = () => {
                 );
             })
         }
+        </div>
         </div>
     )
 }

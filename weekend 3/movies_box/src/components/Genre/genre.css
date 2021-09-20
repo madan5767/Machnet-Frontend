@@ -2,7 +2,7 @@
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 10px;  
+    column-gap: 10px;
 }
 
 .item{   
@@ -10,7 +10,7 @@
     padding: 15px;
     height: 540px;
     border: 5px solid white;
-    border-radius: 10px;    
+    border-radius: 10px;     
 }
 
 .movieImage{
@@ -25,6 +25,7 @@ h1{
 }
 
 .item h3, p{
+    display: inline-block;
     color: white;
     text-align: center;
 }

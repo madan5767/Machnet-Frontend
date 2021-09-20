@@ -77,8 +77,12 @@ button:hover{
 }
 
 h6{
-    font-size: medium;
+    font-size: 30px;
     position: absolute;
-    margin-top: 100vh;
-    margin-left: 75vw;      
+    margin-top: 105vh;
+    margin-left: 75vw;   
+}
+
+.link{
+    color: whitesmoke;
 }

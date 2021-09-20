@@ -8,7 +8,7 @@
 .nav {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     background-color: var(--background-color);
 }
@@ -16,13 +16,13 @@
 .nav__logo {
     font-size: 2rem;
     margin-left: 15vw;
-    color: var(--primary-color);
     font-family: 'Lucida Handwriting', Cursive;
 }
 
-/* .nav-wrapper {
-    margin-right: 15vw;
-} */
+.logo{
+    color: var(--primary-color);
+    text-decoration: none;
+}
 
 .nav__menu {
     display: flex;
@@ -45,9 +45,6 @@
     color: var(--secondary-color);
 }
 
-/* .nav__subitem a {
-    margin: 0vh 2vw 0vh 0vw;
-} */
 
 .nav_item a:hover, .nav__subitem a:hover {
     color: var(--primary-color);

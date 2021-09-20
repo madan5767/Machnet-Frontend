@@ -18,6 +18,8 @@ function Action() {
 
     console.log(details)
     return (
+        <div className="genre-title">
+        <h1>Action Movies</h1>
         <div className='first'>            
         { 
             details.map((detail) => {
@@ -38,6 +40,7 @@ function Action() {
                 );
             })
         }
+        </div>
         </div>
     )
 }

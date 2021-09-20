@@ -61,7 +61,7 @@ const DramaSlide = () => {
                     <button>Watched &#10003; </button>
               </div>
             )})}
-            <h6> <Link to='/Drama'>See All</Link></h6>       
+            <h6> <Link to='/Drama' class="link">See All</Link></h6>       
         </div>
         </section>    
     )

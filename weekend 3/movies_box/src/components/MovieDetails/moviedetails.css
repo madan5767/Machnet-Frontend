@@ -1,0 +1,23 @@
+.movie{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie-suggest-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.movie-suggest-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:200px;
+}
+
+.movieImage__second{
+    height: 300px;
+    width: 200px;
+}

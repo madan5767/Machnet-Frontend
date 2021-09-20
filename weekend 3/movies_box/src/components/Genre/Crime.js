@@ -19,7 +19,9 @@ const Crime = () => {
     
     console.log(details)
     return (
-        <div className='first'>
+        <div className="genre-title">
+        <h1>Crime Movies</h1>
+        <div className='first'>        
         { 
             details.map((detail) => {
                 return (
@@ -34,6 +36,7 @@ const Crime = () => {
                 );
             })
         }
+        </div>
         </div>
     )
 }

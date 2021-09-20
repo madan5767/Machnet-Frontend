@@ -18,12 +18,12 @@ function App() {
       <Header/>
         <Switch>
           <Route exact path='/' component={Home}></Route>
-          <Route path='/Action' component={Action}/>
-          <Route path='/Crime' component={Crime}/>
-          <Route path='/Drama' component={Drama}/>
-          <Route path='/Thriller' component={Thriller}/>
-          <Route path='/MovieDetails' component={MovieDetails}/>
-          <Route path='/WatchList' component={WatchList}/>
+          <Route exact path='/Action' component={Action}/>
+          <Route exact path='/Crime' component={Crime}/>
+          <Route exact path='/Drama' component={Drama}/>
+          <Route exact path='/Thriller' component={Thriller}/>
+          <Route exact path='/MovieDetails' component={MovieDetails}/>
+          <Route exact path='/WatchList' component={WatchList}/>
         </Switch>
       <Footer/>   
       </BrowserRouter>

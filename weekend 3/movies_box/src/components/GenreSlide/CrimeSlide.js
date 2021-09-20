@@ -63,7 +63,7 @@ const CrimeSlide = () => {
                 </div>
             )})}
 
-            <h6> <Link to='/Crime'>See All</Link></h6>        
+            <h6> <Link to='/Crime' class="link">See All</Link></h6>        
         </div>
         </section>    
     )

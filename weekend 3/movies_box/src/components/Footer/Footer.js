@@ -12,7 +12,7 @@ const Footer = () => {
 
       <div className="footer-right">
         <h4 className="footer-right__title">Privacy & Policy</h4>
-          <p><NavLink to={"/terms"}>By using this site you agree to and accept our User Agreement, which can be read here.</NavLink></p>
+          <p>By using this site you agree to and accept our User Agreement, which can be read here.</p>
       </div>
     </footer>
   );

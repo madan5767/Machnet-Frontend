@@ -63,7 +63,7 @@ const ThrillerSlide = () => {
                     <button>Watched &#10003; </button>
                 </div>
             )})}
-            <h6> <Link to='/Thriller'>See All</Link></h6>        
+            <h6> <Link to='/Thriller' class="link">See All</Link></h6>        
         </div>
         </section>   
     )

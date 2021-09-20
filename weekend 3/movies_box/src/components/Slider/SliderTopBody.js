@@ -24,7 +24,7 @@ const SliderTopBody = (props) => {
 
   return (
     <>
-    <h1>Upcoming Movies</h1>
+    <h1>Recently Added</h1>
       {movieDetails
         .slice(movies.prev, movies.next)
         .map((currentMovie, index) => {

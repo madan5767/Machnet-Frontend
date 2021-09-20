@@ -58,8 +58,8 @@ const ThrillerSlide = () => {
                     <img src={currMovie.medium_cover_image} alt='movie'  className='image__slider'/>
                     <h4>Movie Name:{currMovie.title}</h4>
                     <p>&#9734; Rating:{currMovie.rating}</p>
-                    <p>&#9200; Duration:{currMovie.runtime} minutes</p>
-                    <button>Add to watch</button>
+                    <p>&#9200; Duration:{currMovie.runtime} Mins.</p>
+                    <button>Watchlist +</button>
                 </div>
             )})}
             <h6> <Link to='/Thriller'>See All</Link></h6>        

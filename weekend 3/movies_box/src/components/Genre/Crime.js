@@ -27,8 +27,8 @@ const Crime = () => {
                     <img src={detail.medium_cover_image} className='movieImage'/>
                     <h3>Movie Name:{detail.title}</h3>
                     <p>&#9734; Rating:{detail.rating}</p>
-                    <p>&#9200; Duration:{detail.runtime} minutes</p>
-                    <button>Add to watch</button>            
+                    <p>&#9200; Duration:{detail.runtime} Mins.</p>
+                    <button>Watchlist +</button>            
                 </div>
                 );
             })

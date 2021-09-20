@@ -4,6 +4,7 @@ import axios from 'axios';
 import {BrowserRouter, Link} from "react-router-dom"
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from 'react-icons/fa';
 import './genreSlide.css';
+import MovieDetails from '../MovieDetails/MovieDetails';
 
 const ActionSlide = () => {
     const [details, setDetails] = useState([]);
@@ -59,9 +60,8 @@ const ActionSlide = () => {
                     <img src={currMovie.medium_cover_image} alt='movie'  className='image__slider'/>
                     <h4>Movie Name:{currMovie.title}</h4>
                     <p>&#9734; Rating:{currMovie.rating}</p>
-                    <p>&#9200; Duration:{currMovie.runtime} minutes</p>
-                    <button>Add to watch</button>
-                    <p>sssdfsdfs{currMovie.id}</p>
+                    <p>&#9200; Duration:{currMovie.runtime} Mins.</p>
+                    <button>Watchlist +</button>
                 </div>
             )})}
 

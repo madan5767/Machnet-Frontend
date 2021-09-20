@@ -37,7 +37,6 @@ const MovieDetails = () => {
                 </div>
             )})}
 
-            <h6> <Link to='/Action'>See More...</Link></h6>        
         </div>
         </section>    
     )

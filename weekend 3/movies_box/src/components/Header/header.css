@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+:root {
+    --primary-color: #1CCA5A;
+    --secondary-color: #FFFFFF;
+    --background-color: #050505;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+}
+
+.nav__logo {
+    font-size: 2rem;
+    margin-left: 15vw;
+    color: var(--primary-color);
+    font-family: 'Carattere', cursive;
+}
+
+/* .nav-wrapper {
+    margin-right: 15vw;
+} */
+
+.nav__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav__menu li {
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    color: var(--secondary-color);
+}
+
+.nav_item a, .nav__subitem a {
+    margin: 5rem;
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: var(--secondary-color);
+}
+
+/* .nav__subitem a {
+    margin: 0vh 2vw 0vh 0vw;
+} */
+
+.nav_item a:hover, .nav__subitem a:hover {
+    color: var(--primary-color);
+}
+
+.nav__submenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+    position: absolute;
+    border-radius: 0.5rem;    
+    background-color: var(--background-color);
+}
+
+#movies:hover .nav__submenu {
+    cursor: pointer;
+    display: block;
+    color: var(--primary-color);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color:  var(--background-color);
+    color: var(--secondary-color);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color);;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li:hover {background-color: var(--background-color);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color:  var(--background-color); color: var(--primary-color);}

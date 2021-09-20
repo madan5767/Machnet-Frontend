@@ -1,0 +1,36 @@
+:root {
+    --primary-color: #1CCA5A;
+    --secondary-color: #FFFFFF;
+    --background-color: #050505;
+}
+
+.footer {
+    position: relative;
+    padding: 25px;
+    display: flex; 
+    flex-direction: row;   
+    justify-content: space-between;
+    margin-top:25px;
+    background-color: var(--background-color);
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__copyright {
+    margin-top: 5vh;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.highlight {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.footer-right__title {
+    color: var(--primary-color);
+    text-align: center;
+}

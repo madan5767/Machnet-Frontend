@@ -14,6 +14,7 @@ const MovieDetails = () => {
     const movieapi = `https://yts.mx/api/v2/movie_details.json?movie_id=${movie_id}`;
     const suggestionapi = `https://yts.mx/api/v2/movie_suggestions.json?movie_id=${movie_id}`;
     const history = useHistory();
+    const [key, setkeys] = useState(Object.keys(localStorage));
 
     const fetchMovieDetails = () => {
         axios
@@ -107,14 +108,33 @@ const MovieDetails = () => {
                 <h1>You May Also Like</h1>
                 <div className="movie-suggest-main">
                     {SuggestedMovies.map((suggested) => {
+                     const handelWatchListClick = () => {
+                        localStorage.setItem("wlist" + suggested.id, JSON.stringify(suggested));
+                        setkeys(Object.keys(localStorage));
+                    };
+                    const watchlist = key.includes("wlist" + suggested.id);
+                    const watched = key.includes("watched" + suggested.id);
+                    
+                    const handelWatchedList = () => {
+                        localStorage.setItem("watched" + suggested.id, JSON.stringify(suggested));
+                        if (watchlist == true) {
+                            localStorage.removeItem("wlist" + suggested.id);
+                        }
+                        setkeys(Object.keys(localStorage));
+                    };                   
+
                         return (
                             <div className="movie-suggest-item" onDoubleClick={() => movieDetailspage(suggested.id)}>
                                 <img src={suggested.medium_cover_image} className="image__slider_suggested"/>
                                 <h3>Movie Name:{suggested.title}</h3>
                                 <p>&#9734; Rating:{suggested.rating}</p>
                                 <p>&#9200; Duration:{suggested.runtime} Mins.</p>
-                                <button>Watchlist +</button>
-                                <button>Watched &#10003; </button>
+                                {watchlist === true || watched === true ? (" ") : 
+                                    (<button onClick={handelWatchListClick}>Watchlist +</button>)
+                                } 
+                                {watched === false ? (<button onClick={handelWatchedList}>Watched &#10003; </button>) :
+                                    (<p>Watched &#10003; </p>)
+                                }
                             </div>
                         );
                     })}

@@ -15,6 +15,11 @@
     flex-direction: column;
 }
 
+.context__movie{
+    padding: 25px;
+    margin-left: 25px;
+}
+
 .movie-top-wrapper{
     display: flex;
     flex-direction: row;

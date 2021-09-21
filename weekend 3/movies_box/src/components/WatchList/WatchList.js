@@ -9,27 +9,34 @@ const WatchList = () => {
     // console.log(data);
 
     useEffect(() => {
-        if (data.length>0) {
-            // console.log(data);
-        }        
+        // if (data.length>0) {
+        //     // console.log(data);
+        // }        
         setData(Object.values(localStorage));
         setkeys(Object.keys(localStorage));
     }, [key])
+    console.log(data);
       
     return (
         <div className='watchlist'>
-            <h1>WatchList</h1>  
+            <h1>WatchList</h1>
+            
             {data.map((item) => {
                 const parsedData = JSON.parse(item);
                 const isWatchlisted=key.includes("wlist"+parsedData.id);
                 
                 const watchListRemove = (id) =>{
-                    localStorage.removeItem("wlist" + parsedData.id);
-                    console.log(id);
+                    console.log(parsedData.id);
+                    localStorage.removeItem('wlist'+parsedData.id);
+                    // console.log(parsedData.id);
                 }
                 // console.log(parsedData.id);
                 // console.log(isWatchlisted);
-                return (           
+
+                return (  
+                    <> 
+                    {isWatchlisted===true?
+                    
                     <div className="watchlist-item" >
                         <img src={parsedData.medium_cover_image} className="movieImage" />                        
                         <div className="watchlist-item-details">            
@@ -39,6 +46,9 @@ const WatchList = () => {
                             <button onClick={() => watchListRemove(parsedData.id)}>Remove</button>
                         </div>
                     </div>
+                    : " "
+                    }
+                    </>                  
                 );
             })}
         </div>

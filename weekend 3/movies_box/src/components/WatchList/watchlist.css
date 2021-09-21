@@ -46,7 +46,11 @@ h1{
 .watchlist-item{
     display: flex;
     flex-direction: row;
-    justify-content: space-around; 
+    justify-content: space-between;
+    margin-right: 25%;
+    margin-left: 15%;
+    padding: 25px;
+
 }
 
 .watchlist-item-details{

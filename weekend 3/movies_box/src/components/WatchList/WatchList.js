@@ -10,7 +10,7 @@ const WatchList = () => {
 
     useEffect(() => {
         if (data.length>0) {
-            // console.log("No data to display");
+            // console.log(data);
         }        
         setData(Object.values(localStorage));
         setkeys(Object.keys(localStorage));

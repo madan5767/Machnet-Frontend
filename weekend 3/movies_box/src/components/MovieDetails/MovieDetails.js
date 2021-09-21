@@ -77,8 +77,8 @@ const MovieDetails = () => {
                         <p className="duration__movie">
                         Duration: {Moviedetail.movie.runtime} Mins.
                         </p>
-                        <button>Watchlist +</button>
-                        <button>Watched &#10003; </button>
+                        {/* <button>Watchlist +</button>
+                        <button>Watched &#10003; </button> */}
                         <p className="desc__movie">
                         Descripiton: {Moviedetail.movie.description_full}
                         </p>

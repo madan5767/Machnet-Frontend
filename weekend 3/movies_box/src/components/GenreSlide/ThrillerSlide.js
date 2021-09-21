@@ -9,6 +9,7 @@ import { useHistory } from 'react-router';
 const ThrillerSlide = () => {
     const [details, setDetails] = useState([]);
     const [movies, setMovies] = useState({ prev: 0, next: 4 });
+    const [key, setkeys] = useState(Object.keys(localStorage));
     const history = useHistory();
 
     useEffect(()=>{
@@ -57,17 +58,35 @@ const ThrillerSlide = () => {
             <FaRegArrowAltCircleRight className='right-arrow__slider' onClick={() => handelNextBtn()} />) : (
             ""
             )}
-            {details.slice(movies.prev, movies.next)
-    
+            
+            {details.slice(movies.prev, movies.next)    
             .map((currMovie, index) => {
+                const handelWatchListClick = () => {
+                    localStorage.setItem("wlist" + currMovie.id, JSON.stringify(currMovie));
+                    setkeys(Object.keys(localStorage));
+                };
+                const watchlist = key.includes("wlist" + currMovie.id);
+                const watched = key.includes("watched" + currMovie.id);
+                
+                const handelWatchedList = () => {
+                    localStorage.setItem("watched" + currMovie.id, JSON.stringify(currMovie));
+                    if (watchlist == true) {
+                        localStorage.removeItem("wlist" + currMovie.id);
+                    }
+                    setkeys(Object.keys(localStorage));
+                };
             return (
-                <div className='main__container' onClick={() => movieDetailspage(currMovie.id)}>
+                <div className='main__container' onDoubleClick={() => movieDetailspage(currMovie.id)}>
                     <img src={currMovie.medium_cover_image} alt='movie'  className='image__slider'/>
                     <h4>Movie Name:{currMovie.title}</h4>
                     <p>&#9734; Rating:{currMovie.rating}</p>
                     <p>&#9200; Duration:{currMovie.runtime} Mins.</p>
-                    <button>Watchlist +</button>
-                    <button>Watched &#10003; </button>
+                    {watchlist === true || watched === true ? (" ") : 
+                        (<button onClick={handelWatchListClick}>Watchlist +</button>)
+                    } 
+                    {watched === false ? (<button onClick={handelWatchedList}>Watched &#10003; </button>) :
+                        (<p>Watched &#10003; </p>)
+                    }
                 </div>
             )})}
             <h6> <Link to='/Thriller' class="link">See All</Link></h6>        

@@ -31,7 +31,7 @@ function Action() {
         { 
             details.map((detail) => {
                 return (        
-                <div className="item" onClick={() => movieDetailspage(detail.id)}>                    
+                <div className="item" onDoubleClick={() => movieDetailspage(detail.id)}>                    
                     {(details.length<=0)?
                     <h1>loading</h1>:
                     <>

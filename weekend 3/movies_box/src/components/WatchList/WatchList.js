@@ -1,40 +1,48 @@
 import React from 'react'
-import axios from 'axios';
+// import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './watchlist.css'
 
 const WatchList = () => {
-    const [details, setDetails] = useState([]);
+    const [data, setData] = useState(Object.values(localStorage));
+    const [key, setkeys] = useState(Object.keys(localStorage));
+    // console.log(data);
 
-    useEffect(()=>{
-        // axios.get('https://yts.mx/api/v2/list_movies.json?genre=crime')
-        // .then(response => {
-        //     setDetails(response.data.data.movies);
-            
-        // })
-        // .catch(error =>{
-        //     alert('error');
-        // })
-    },[]);
-    
-    console.log(details)
+    useEffect(() => {
+        if (data.length>0) {
+            // console.log("No data to display");
+        }        
+        setData(Object.values(localStorage));
+        setkeys(Object.keys(localStorage));
+    }, [key])
+      
     return (
-        <div className='first'>
-        { 
-            details.map((detail) => {
-                return (
-                <div className="item">
-                    <img src={detail.medium_cover_image} className='movieImage'/>
-                    <h3>Movie Name:{detail.title}</h3>
-                    <p>&#9734; Rating:{detail.rating}</p>
-                    <p>&#9200; Duration:{detail.runtime} minutes</p>
-                    <button>Add to watch</button>            
-                </div>
+        <div className='watchlist'>
+            <h1>WatchList</h1>  
+            {data.map((item) => {
+                const parsedData = JSON.parse(item);
+                const isWatchlisted=key.includes("wlist"+parsedData.id);
+                
+                const watchListRemove = (id) =>{
+                    localStorage.removeItem("wlist" + parsedData.id);
+                    console.log(id);
+                }
+                // console.log(parsedData.id);
+                // console.log(isWatchlisted);
+                return (           
+                    <div className="watchlist-item" >
+                        <img src={parsedData.medium_cover_image} className="movieImage" />                        
+                        <div className="watchlist-item-details">            
+                            <h3>Movie Name:{parsedData.title}</h3>
+                            <p>&#9734; Rating:{parsedData.rating}</p>
+                            <p>&#9200; Duration:{parsedData.runtime} Mins.</p>
+                            <button onClick={() => watchListRemove(parsedData.id)}>Remove</button>
+                        </div>
+                    </div>
                 );
-            })
-        }
+            })}
         </div>
-    )
+    )    
 }
 
 export default WatchList

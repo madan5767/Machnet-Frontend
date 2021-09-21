@@ -108,7 +108,7 @@ const MovieDetails = () => {
                 <div className="movie-suggest-main">
                     {SuggestedMovies.map((suggested) => {
                         return (
-                            <div className="movie-suggest-item" onClick={() => movieDetailspage(suggested.id)}>
+                            <div className="movie-suggest-item" onDoubleClick={() => movieDetailspage(suggested.id)}>
                                 <img src={suggested.medium_cover_image} className="image__slider_suggested"/>
                                 <h3>Movie Name:{suggested.title}</h3>
                                 <p>&#9734; Rating:{suggested.rating}</p>
@@ -120,7 +120,6 @@ const MovieDetails = () => {
                     })}
                 </div>
             </div>
-
         </div> 
     )
 }

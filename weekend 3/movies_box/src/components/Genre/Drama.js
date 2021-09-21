@@ -31,7 +31,7 @@ const Drama = () => {
         { 
             details.map((detail) => {
                 return (
-                <div className="item" onClick={() => movieDetailspage(detail.id)}>
+                <div className="item" onDoubleClick={() => movieDetailspage(detail.id)}>
                     <img src={detail.medium_cover_image} className='movieImage'/>
                     <h3>Movie Name:{detail.title}</h3>
                     <p>&#9734; Rating:{detail.rating}</p>

@@ -42,3 +42,15 @@ h1{
 .item button:hover{
     color: green;
 }
+
+.watchlist-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+}
+
+.watchlist-item-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
